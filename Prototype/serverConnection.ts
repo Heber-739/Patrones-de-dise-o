@@ -11,11 +11,11 @@
     }
 
 class ServerConnectionPrototype {
-    public conection: Connection;
+    public connection: Connection;
     public key: string;
 
-    constructor(conection:Pick<ServerConnectionPrototype,"conection"> ){
-        this.conection = conection.conection;
+    constructor(connection:Pick<ServerConnectionPrototype,"connection"> ){
+        this.connection = connection.connection;
     }
 
     public clone(): ServerConnectionPrototype {
@@ -31,8 +31,8 @@ class ServerConnectionPrototype {
 
 
 function conectToServer() {
-    const conectionData = new Connection("MySql","localhost","users","cosme fulanito","123");
-    let conect = new ServerConnectionPrototype({conection:conectionData})
+    const connectionData = new Connection("MySql","localhost","users","cosme fulanito","123");
+    let conect = new ServerConnectionPrototype({connection:connectionData})
     conect.setKey('cosme.123');
     let retry = conect.clone();
     console.log(conect);
